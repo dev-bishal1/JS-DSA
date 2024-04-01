@@ -12,6 +12,7 @@ const containsDuplicate = (numbers = []) => {
   return false;
 };
 
+// LeetCode best solution
 /**
  * @param {number[]} nums
  * @return {boolean}
