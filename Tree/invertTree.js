@@ -52,22 +52,27 @@ class Tree {
     invertNode(this.root);
     return this.root;
   }
+
+  maxDepth(root) {
+    if (!root) {
+      return 0;
+    } else {
+      let leftDepth = this.maxDepth(root.left);
+      let rightDepth = this.maxDepth(root.right);
+      return Math.max(leftDepth, rightDepth) + 1;
+    }
+  }
 }
 
 // [4, 2, 7, 1, 3, 6, 9];
 const tree = new Tree();
-tree.insert(4);
-tree.insert(2);
-tree.insert(7);
-tree.insert(1);
 tree.insert(3);
+tree.insert(2);
+tree.insert(5);
+tree.insert(4);
 tree.insert(6);
-tree.insert(9);
-// tree.insert(1);
-// tree.insert(1);
-
-console.log(tree.invert());
 
 
+console.log(tree.maxDepth(tree.root));
 
-// console.log(JSON.stringify(tree, null, 2));
+// console.log(tree.invert());
